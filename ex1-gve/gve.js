@@ -2,15 +2,13 @@ var fs = require( 'fs' ),
     path = require( 'path' ),
     verify = require( 'adventure-verify' );
 
-exports.problem = fs.createReadStream( __dirname + '/task0.md' );
+exports.problem = fs.createReadStream( __dirname + '/problem-gve.md' );
 
 exports.verify = verify( { modeReset: true }, function checker( args, t ) {
     var res = require( path.resolve( args[ 0 ] ) );
 
-    t.ok( typeof res.hello == 'function', 'Function hello() is exported' );
-
-    if ( res.hello ) {
-        t.equal( res.hello(), 'hello', 'Return value of the function is "hello"' );
+    if (!(res.Graph && res.Edge && res.Vertex)) {
+        t.end( 'Graph, Edge, Vertex must be exported.' );
     }
 
     t.end();

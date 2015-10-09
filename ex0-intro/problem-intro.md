@@ -13,5 +13,6 @@ The following example file exports a function `randomValue`.
 Your task is to write a JavaScript file for node.js which exports a function `hello`. The function should simply return the string 
 `'hello'`.
 
-    
-    
+Then, verify with:
+
+    graphs-with-javascript verify your-solution.js

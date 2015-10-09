@@ -2,9 +2,6 @@
 
 This task is here to get your environment running.
 
-Write a JavaScript file for node.js which exports a function `hello`. The function should simply return the string 
-`'hello'`.
-
 The following example file exports a function `randomValue`.
 
     function demo() { 
@@ -12,5 +9,9 @@ The following example file exports a function `randomValue`.
     }
     
     module.exports = { randomValue: demo };
+
+Your task is to write a JavaScript file for node.js which exports a function `hello`. The function should simply return the string 
+`'hello'`.
+
     
     

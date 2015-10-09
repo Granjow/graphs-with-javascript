@@ -47,3 +47,6 @@ Your task is to return an object containing three constructor functions:
 ## Literature
 
 * [Wikipedia: Directed graph](https://en.wikipedia.org/wiki/Directed_graph)
+* [JavaScript Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
+* [JavaScript Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)
+* [JavaScript Arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)

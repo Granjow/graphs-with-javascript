@@ -4,49 +4,61 @@ A **directed graph** *G* is a set of vertices *V* and (directed) edges *E*, i.e.
 
     G = (V, E)
     
-To get our graph algorithms running, we first need to create edges and vertices, and a graph which manages them.
-Write constructors for those types so that a graph can be constructed in the following way:
+## Goal
 
-    // Create a new directed graph object
-    var dg = new Graph();
-    
-    // Add vertices with IDs 1, 2, and 3
-    dg.addVertex( 1 );
-    dg.addVertex( 2 );
-    dg.addVertex( 3 );
-    
-    // Add edges from 1 to 2, and from 1 to 3
-    dg.addEdge( 1, 2 );
-    dg.addEdge( 1, 3 );
-    
-The above code should construct a graph which looks like this:
+You will be given a list of vertices and edges, and you have to be able to list all neighbours of a vertex (i.e. 
+they can be reached over a single edge). Keep in mind that we use directed edges, so with `1 --> 2` we cannot reach
+`2` from `1`.
 
-    2 <-- 1 --> 3
+## Problem Description
+
+In this task, you will create the first half of a graph structure – vertices and edges. Keeping them in a data structure 
+allows us to run queries on the graph, like in this case where we want to find out the neighbours vertices are connected
+to. Let's assume we have *V* = 1000 vertices and *E* = 4000 edges and we want to find out the neighbours.
+
+If we just have the information as list, we have to read all *E* edges every time we want to find neighbours of a vertex.
+(In [Big O notation](https://en.wikipedia.org/wiki/Big_O_notation), this is complexity `O(E)`.)
+
+However, if we save this information in a *Vertex* object, we just need that object and immediately have access to the results.
+(This is `O(1)` if we already have the vertex object.) This is much faster, especially the larger graphs become.
+
+## Task
+
+Your task is to return an object with two constructors, one for a vertex, and one for an edge. The following code
+should be supported by your code:
+
+    var v1 = new Vertex( 1 ),
+        v2 = new Vertex( 2 ),
+        v3 = new Vertex( 3 ),
+        v4 = new Vertex( 4 );
+        
+    var e1 = new Edge( v1, v2 ),
+        e2 = new Edge( v1, v3 ),
+        e3 = new Edge( v4, v3 );
+        
+    var neighboursOfV1 = v1.neighbours();
+    // Should return [ v2, v3 ]
     
-Since we also want to read the graph, it should allow us to get specific vertices and their edges. Again, the following
-code should be supported by your library.
-
-
-    var vertex1 = dg.v( 1 );
-    console.log( v.id ); 
-    // 1
+    var neighboursOfV2 = v2.neighbours();
+    // Should return [ ] as v2 has no outgoing edges
     
-    vertex1.printEdges();
-    // 1 to 2
-    // 1 to 3
+    var neighboursOfV4 = v4.neighbours();
+    // Should return [ v3 ]
+
+You may use the following code template:
+
+    var Vertex = function( id ) {
+        // Your code here
+    };
     
-Your task is to return an object containing three constructor functions:
+    var Edge = function( vFrom, vTo ) {
+        // Your code here
+    };
+    
+    module.exports = { Vertex: Vertex, Edge: Edge };
 
-    module.exports = { Graph: Graph, Vertex: Vertex, Edge: Edge };
-
-    Graph               Vertex         Edge
-    -----               ------         ----
-    addVertex( id )     id
-    addEdge( id )       printEdges()
 
 ## Literature
 
 * [Wikipedia: Directed graph](https://en.wikipedia.org/wiki/Directed_graph)
-* [JavaScript Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
-* [JavaScript Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)
 * [JavaScript Arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)

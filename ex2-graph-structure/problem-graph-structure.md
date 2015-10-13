@@ -1,14 +1,28 @@
+# Graph Structure
 
+## Goal
+
+We will add a Graph to the Edge and Vertex objects from the previous exercise.
+
+## Problem Description
+
+Creating a large number of edges and vertices was not really that comfortable since we had to keep track
+of all vertex and edge objects. Let us therefore add another data structure, the *Graph*, which holds 
+all vertices and edges.
+
+Vertices are identified by their ID (or number), so we can use it for requesting any (existing) vertex
+from the graph and then, for example, get the number of neighbours.
 
 ## Task
 
-Your task is to return an object with a Graph constructor. It should read vertices and edges
+Your task is to return an object with a Graph constructor. It should read vertices and edges from an array like so:
 
     var vertices = [ 1, 2, 3, 4 ];
     var edges = [ [ 1, 2], [1, 3], [4, 3] ];
     
     var graph = new Graph( vertices, edges );
-    
+
+
     
 To get our graph algorithms running, we first need to create edges and vertices., and a graph which manages them.
 Write constructors for those types so that a graph can be constructed in the following way:

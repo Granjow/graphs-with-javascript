@@ -2,5 +2,9 @@
   "name": "graphs-with-javascript",
   "version": "0.0.1",
   "author": "Simon A. Eugster <simon.eu@gmail.com>",
-  "description": "Small tutorial on using graph algorithms"
+  "description": "Small tutorial on using graph algorithms",
+  "dependencies": {
+    "adventure": "^2.11.0",
+    "adventure-verify": "^2.2.0"
+  }
 }

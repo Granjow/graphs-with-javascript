@@ -1,6 +1,6 @@
 {
   "name": "graphs-with-javascript",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Simon A. Eugster <simon.eu@gmail.com>",
   "license": "MIT",
   "keywords": [
@@ -15,6 +15,6 @@
     "adventure-verify": "^2.2.0"
   },
   "bin": {
-    "graph-algorithms": "runner.js"
+    "g-w-j": "runner.js"
   }
 }

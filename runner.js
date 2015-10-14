@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var adventure = require( 'adventure' );
 
 var shop = adventure( {

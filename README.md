@@ -12,4 +12,4 @@ and then use
 
 to start your adventure!
 
-Note that it will not work with Node.js 4.x on Windows. 
+Note that it will not work with Node.js 4.x on Windows.

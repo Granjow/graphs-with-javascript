@@ -14,12 +14,15 @@ Vertices are identified by their ID (or number), so we can use it for requesting
 from the graph and then, for example, get the number of neighbours.
 
 Hint: Be careful about the data structure you choose for storing vertices; see the literature section
-at the end. 
+at the end. You can expect that JavaScript data structures like Object and Map are internally using
+e.g. binary search trees.
 
-Make sure you can answer the following questions:
+Make sure you can answer the following questions. You may want to consider the literature linked below
+or some literature about algorithms and binary search trees.
 
-* Why should you not use an array?
-* 
+* What magnitude of operations is required when searching for an element in an array vs. in a binary search tree,
+  for n = 10, n = 1000, and n = 100 000? (E.g., if an algorithm has complexity *O(n²)*, we would receive 100, 10⁶, 10¹⁰.)
+* Why should you not use an array for the vertices?
 
 ## Task
 
@@ -49,3 +52,4 @@ You may use the following template (obviously, you will also want to add your ed
 * [Big-O Cheatsheet](http://bigocheatsheet.com/)
 * [JavaScript Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
 * [JavaScript Arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+* [Array, Object, Map: Lookup](http://jsperf.com/es6-array-object-map-lookup)

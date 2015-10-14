@@ -35,9 +35,12 @@ should be supported by your code:
     var e1 = new Edge( v1, v2 ),
         e2 = new Edge( v1, v3 ),
         e3 = new Edge( v4, v3 );
-        
+
+    var firstId = v1.id;
+    // Should return 1
+
     var neighboursOfV1 = v1.neighbours();
-    // Should return [ v2, v3 ]
+    // Should return [ v2, v3 ], i.e. an array containing Vertex objects
     
     var neighboursOfV2 = v2.neighbours();
     // Should return [ ] as v2 has no outgoing edges
@@ -48,6 +51,7 @@ should be supported by your code:
 You may use the following code template:
 
     var Vertex = function( id ) {
+        this.id = id;
         // Your code here
     };
     

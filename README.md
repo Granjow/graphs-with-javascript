@@ -1,5 +1,3 @@
-# graph-algorithms
-
 This is a tutorial on graph algorithms. It is using [adventure](https://www.npmjs.com/package/adventure).
 
 Install this adventure with

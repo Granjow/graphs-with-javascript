@@ -1,6 +1,6 @@
 {
   "name": "graphs-with-javascript",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": "Simon A. Eugster <simon.eu@gmail.com>",
   "license": "MIT",
   "keywords": [
@@ -12,7 +12,8 @@
   "description": "Small tutorial on using graph algorithms",
   "dependencies": {
     "adventure": "^2.11.0",
-    "adventure-verify": "^2.2.0"
+    "adventure-verify": "^2.2.0",
+    "markdown-pdf": "^5.3.0"
   },
   "bin": {
     "g-w-j": "runner.js"

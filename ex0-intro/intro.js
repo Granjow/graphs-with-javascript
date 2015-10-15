@@ -1,8 +1,19 @@
 var fs = require( 'fs' ),
     path = require( 'path' ),
-    verify = require( 'adventure-verify' );
+    verify = require( 'adventure-verify' ),
+    md = require( 'cli-md' ),
+    markdownpdf = require( 'markdown-pdf' ); // msee is nice too
 
-exports.problem = fs.createReadStream( __dirname + '/problem-intro.md' );
+exports.problem = function () {
+    var file = path.join( __dirname, 'problem-intro.md' ),
+        out = path.resolve( 'problem-intro.pdf' );
+
+    markdownpdf().from( file ).to( out, function () {
+        console.log( md( 'Created `' + out + '` -- if you prefer to read this problem as PDF' ) );
+    } );
+
+    return md( fs.readFileSync( file, { encoding: 'utf8' } ) );
+};
 exports.solution = fs.createReadStream( __dirname + '/solution-intro.js' );
 
 exports.verify = verify( { modeReset: true }, function checker( args, t ) {

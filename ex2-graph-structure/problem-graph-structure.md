@@ -49,6 +49,7 @@ You may use the following template (obviously, you will also want to add your ed
 
 ## Literature
 
+* [Explanation of Big O](http://stackoverflow.com/a/487278/271961) – recommended reading
 * [Big-O Cheatsheet](http://bigocheatsheet.com/)
 * [JavaScript Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
 * [JavaScript Arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)

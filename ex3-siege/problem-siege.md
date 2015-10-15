@@ -1,6 +1,6 @@
 # Under Siege
 
-ABC us under siege. Its troops are very powerful, but limited in their number, so they can only be 
+ABC is under siege. Its troops are very powerful, but limited in their number, so they can only be 
 present in one city at the same time.
 
 Intelligence has provided us with a list of cities and attacking troops. Your task is to hand us 

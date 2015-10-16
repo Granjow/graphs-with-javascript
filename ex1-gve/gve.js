@@ -1,19 +1,9 @@
-var fs = require( 'fs' ),
-    path = require( 'path' ),
+var path = require( 'path' ),
     verify = require( 'adventure-verify' ),
-    md = require( 'cli-md' ),
-    markdownpdf = require( 'markdown-pdf' );
+    tools = require( '../library/tools' );
 
-exports.problem = function () {
-    var file = path.join( __dirname, 'problem-gve.md' ),
-        out = path.resolve( 'problem-gve.pdf' );
-
-    markdownpdf().from( file ).to( out, function () {
-        console.log( md( 'Created `' + out + '` -- if you prefer to read this problem as PDF' ) );
-    } );
-
-    return md( fs.readFileSync( file, { encoding: 'utf8' } ) );
-};
+exports.problem = tools.mdProblem( path.join( __dirname, 'problem-gve.md' ), 'problem-gve.pdf' );
+exports.solution = tools.mdSolution( path.join( __dirname, 'solution-gve.js' ) );
 
 exports.verify = verify( { modeReset: true }, function checker( args, t ) {
     var res = require( path.resolve( args[ 0 ] ) );

@@ -12,7 +12,7 @@ var shop = adventure( {
 shop.add( 'Intro', function () {
     return require( './ex0-intro/intro' );
 } );
-shop.add( 'Graphs, Vertices, Edges', function () {
+shop.add( 'Vertices and Edges', function () {
     return require( './ex1-gve/gve.js' );
 } );
 shop.add( 'Graph Structure', function () {

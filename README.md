@@ -18,23 +18,24 @@ for Windows since adventure will not work with 4.x yet. [See this bug.](https://
 Goal is to write a number of different exercises which will give you a good understanding of graphs and using them
 to solve various types of problems. More exercises will be added. Current progress:
 
-                                   problem           verifier
+                                 v problem         v verifier           v
                                  | written         | written            | done
-    Introduction ————————————————-—————————————————-————————————————————X
+                                 
+    Introduction ————————————————·—————————————————·————————————————————O
     Get started with this adventure and verify your first exercise.
     
-    Vertices + Edges ————————————-—————————————————-————————————————————X
+    Vertices + Edges ————————————·—————————————————·————————————————————O
     Create a data structure for edges and vertices; preparation for
     later exercises.
     
-    Graphs ——————————————————————-—————————————————-————————————————————X
+    Graphs ——————————————————————·—————————————————·————————————————————O
     Create a Graph data structure which manages the vertices and edges
     from the previous exercise.
     
-    Reading Problems —————————
+    Reading Problems ————————————·
     Read large graphs from files.
     
-    Under Siege —————————————————x
+    Under Siege —————————————————·
     Help the city ABC, which is under siege, to defend itself with your
     new knowledge!
     

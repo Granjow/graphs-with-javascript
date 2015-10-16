@@ -10,13 +10,13 @@ var shop = adventure( {
 } );
 
 shop.add( 'Intro', function () {
-    return require( './ex0-intro/intro' );
+    return require( './exercises/ex0-intro/intro' );
 } );
 shop.add( 'Vertices and Edges', function () {
-    return require( './ex1-gve/gve.js' );
+    return require( './exercises/ex1-vertices-edges/vertices-edges.js' );
 } );
 shop.add( 'Graph Structure', function () {
-    return require( './ex2-graph-structure/graph-structure' );
+    return require( './exercises/ex2-graph-structure/graph-structure' );
 } );
 
 shop.execute( process.argv.slice( 2 ) );

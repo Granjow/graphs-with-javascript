@@ -1,9 +1,9 @@
 var path = require( 'path' ),
     verify = require( 'adventure-verify' ),
-    tools = require( '../library/tools' );
+    tools = require( '../../library/tools' );
 
-exports.problem = tools.mdProblem( path.join( __dirname, 'problem-gve.md' ), 'problem-gve.pdf' );
-exports.solution = tools.mdSolution( path.join( __dirname, 'solution-gve.js' ) );
+exports.problem = tools.mdProblem( path.join( __dirname, 'problem-vertices-edges.md' ), 'problem-vertices-edges.pdf' );
+exports.solution = tools.mdSolution( path.join( __dirname, 'solution-vertices-edges.js' ) );
 
 exports.verify = verify( { modeReset: true }, function checker( args, t ) {
     var res = require( path.resolve( args[ 0 ] ) );

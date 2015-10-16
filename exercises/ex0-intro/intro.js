@@ -1,6 +1,6 @@
 var path = require( 'path' ),
     verify = require( 'adventure-verify' ),
-    tools = require( '../library/tools' );
+    tools = require( '../../library/tools' );
 
 exports.problem = tools.mdProblem( path.join( __dirname, 'problem-intro.md' ), 'problem-intro.pdf' );
 exports.solution = tools.mdSolution( path.join( __dirname, 'solution-intro.js' ) );

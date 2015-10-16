@@ -15,5 +15,8 @@ shop.add( 'Intro', function () {
 shop.add( 'Graphs, Vertices, Edges', function () {
     return require( './ex1-gve/gve.js' );
 } );
+shop.add( 'Graph Structure', function () {
+    return require( './ex2-graph-structure/graph-structure' );
+} );
 
 shop.execute( process.argv.slice( 2 ) );

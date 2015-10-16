@@ -20,18 +20,18 @@ to solve various types of problems. More exercises will be added. Current progre
 
                                    problem           verifier
                                  | written         | written            | done
-    Introduction ––––––––––––––––-–––––––––––––––––-––––––––––––––––––––X
+    Introduction ————————————————-—————————————————-————————————————————X
     Get started with this adventure and verify your first exercise.
     
-    Vertices + Edges ––––––––––––-–––––––––––––––––-––––––––––––––––––––X
+    Vertices + Edges ————————————-—————————————————-————————————————————X
     Create a data structure for edges and vertices; preparation for
     later exercises.
     
-    Graphs ––––––––––––––––––––––x
+    Graphs ——————————————————————-————————————
     Create a Graph data structure which manages the vertices and edges
     from the previous exercise.
     
-    Under Siege –––––––––––––––––x
+    Under Siege —————————————————x
     Help the city ABC, which is under siege, to defend itself with your
     new knowledge!
     

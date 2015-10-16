@@ -27,9 +27,12 @@ to solve various types of problems. More exercises will be added. Current progre
     Create a data structure for edges and vertices; preparation for
     later exercises.
     
-    Graphs ——————————————————————-————————————
+    Graphs ——————————————————————-—————————————————-————————————————————X
     Create a Graph data structure which manages the vertices and edges
     from the previous exercise.
+    
+    Reading Problems —————————
+    Read large graphs from files.
     
     Under Siege —————————————————x
     Help the city ABC, which is under siege, to defend itself with your

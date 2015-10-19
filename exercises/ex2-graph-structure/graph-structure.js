@@ -2,7 +2,10 @@ var path = require( 'path' ),
     verify = require( 'adventure-verify' ),
     tools = require( '../../library/tools' );
 
-exports.problem = tools.mdProblem( path.join( __dirname, 'problem-graph-structure.md' ), 'problem-graph-structure.pdf' );
+exports.problem = tools.mdProblem( {
+    mdSource: path.join( __dirname, 'problem-graph-structure.md' ),
+    pdfName: 'problem-graph-structure.pdf'
+} );
 
 exports.solution = tools.mdSolution( path.join( __dirname, 'solution-graph-structure.js' ) );
 

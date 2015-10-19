@@ -2,7 +2,10 @@ var path = require( 'path' ),
     verify = require( 'adventure-verify' ),
     tools = require( '../../library/tools' );
 
-exports.problem = tools.mdProblem( path.join( __dirname, 'problem-intro.md' ), 'problem-intro.pdf' );
+exports.problem = tools.mdProblem( {
+    mdSource: path.join( __dirname, 'problem-intro.md' ),
+    pdfName: 'problem-intro.pdf'
+} );
 exports.solution = tools.mdSolution( path.join( __dirname, 'solution-intro.js' ) );
 
 exports.verify = verify( { modeReset: true }, function checker( args, t ) {

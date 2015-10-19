@@ -2,7 +2,10 @@ var path = require( 'path' ),
     verify = require( 'adventure-verify' ),
     tools = require( '../../library/tools' );
 
-exports.problem = tools.mdProblem( path.join( __dirname, 'problem-vertices-edges.md' ), 'problem-vertices-edges.pdf' );
+exports.problem = tools.mdProblem( {
+    mdSource: path.join( __dirname, 'problem-vertices-edges.md' ),
+    pdfName: 'problem-vertices-edges.pdf'
+} );
 exports.solution = tools.mdSolution( path.join( __dirname, 'solution-vertices-edges.js' ) );
 
 exports.verify = verify( { modeReset: true }, function checker( args, t ) {

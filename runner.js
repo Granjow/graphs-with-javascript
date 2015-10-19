@@ -18,5 +18,8 @@ shop.add( 'Vertices and Edges', function () {
 shop.add( 'Graph Structure', function () {
     return require( './exercises/ex2-graph-structure/graph-structure' );
 } );
+shop.add( 'Reading Problems', function () {
+    return require( './exercises/ex3-reading-problems/reading-problems' );
+} );
 
 shop.execute( process.argv.slice( 2 ) );

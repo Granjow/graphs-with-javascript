@@ -15,6 +15,7 @@
     "url": "git@github.com:Granjow/graphs-with-javascript.git"
   },
   "description": "Small tutorial on using graph algorithms",
+  "main": "runner.js",
   "dependencies": {
     "adventure": "^2.11.0",
     "adventure-verify": "^2.2.0",

@@ -84,6 +84,15 @@ Graph.prototype = {
      */
     v: function ( id ) {
         return this._vertices.get( id );
+    },
+    topNeighbours: function ( topN ) {
+        var stat = [];
+        this._vertices.forEach( function ( v ) {
+            stat.push( { v: v, c: v.neighbours().length } )
+        } );
+        return stat.sort( function ( a, b ) {
+            return b.c - a.c;
+        } ).slice( 0, topN );
     }
 };
 
@@ -104,12 +113,16 @@ function readGraph( inFilePath, callback ) {
         if ( verticesRead ) {
             var edge = line.split( ' ' );
             if ( edge.length == 2 ) {
+                //console.log( 'Edge: ', edge );
                 edges.push( edge );
+            } else {
+                console.log( 'No edge: ', line );
             }
         } else {
             if ( line.length == 0 ) {
                 verticesRead = true;
             } else {
+                //console.log( 'Vertex: ', line );
                 vertices.push( line );
             }
         }

@@ -1,6 +1,7 @@
 var path = require( 'path' ),
     verify = require( 'adventure-verify' ),
-    tools = require( '../../library/tools' );
+    tools = require( '../../library/tools' ),
+    verifier = require( './verifier' );
 
 exports.problem = function () {
     return tools.mdProblem( {
@@ -13,45 +14,83 @@ exports.problem = function () {
 
 exports.solution = tools.mdSolution( path.join( __dirname, 'solution-reading-problems.js' ) );
 
-exports.verify = verify( { modeReset: true }, function checker( args, t ) {
-    var reader = require( path.resolve( args[ 0 ] ) ),
-        verifier = require( './solution-reading-problems' ),
-        sorter = function ( a, b ) {
-            return a.id.localeCompare( b.id );
-        },
-        inFile = path.join( __dirname, 'samples', 'sample1.in' );
+function runAgainstFile( t, theirSolver, inFile, desc, next ) {
+    var sorter = function ( a, b ) {
+        return a.id.localeCompare( b.id );
+    };
 
-    console.log( 'Testing against ' + inFile );
+    t.comment( 'Testing against: ' + desc );
 
-    reader( inFile, function ( testGraph ) {
-        verifier( inFile, function ( verifierGraph ) {
-            var verticesFound = { c: 0, total: 0 },
-                correctNbs = { c: 0, total: 0 };
-            verifierGraph._vertices.forEach( function ( v ) {
-                verticesFound.total++;
-                if ( testGraph.v( v.id ) ) {
-                    verticesFound.c++;
-                    var verifiedNeighbours = v.neighbours().sort( sorter ),
-                        testNeighbours = testGraph.v( v.id ).neighbours().sort( sorter );
+    var tStart, tEnd, vStart, vEnd;
+    try {
+        tStart = new Date().getTime();
+        theirSolver( inFile, function ( testGraph ) {
+            tEnd = new Date().getTime();
 
-                    correctNbs.total++;
-                    if ( testNeighbours.length === verifiedNeighbours.length ) {
-                        if ( verifiedNeighbours.every( function ( el, ix ) {
-                                return el.id == testNeighbours[ ix ].id;
-                            } ) ) {
-                            correctNbs.c++;
+            vStart = new Date().getTime();
+            verifier( inFile, function ( verifierGraph ) {
+                vEnd = new Date().getTime();
+
+                var dtTheirs = tEnd - tStart,
+                    dtOurs = vEnd - vStart;
+
+                var verticesFound = { c: 0, total: 0 },
+                    correctNbs = { c: 0, total: 0 };
+                verifierGraph._vertices.forEach( function ( v ) {
+                    verticesFound.total++;
+                    if ( testGraph.v( v.id ) ) {
+                        verticesFound.c++;
+                        var verifiedNeighbours = v.neighbours().sort( sorter ),
+                            testNeighbours = testGraph.v( v.id ).neighbours().sort( sorter );
+
+                        correctNbs.total++;
+                        if ( testNeighbours.length === verifiedNeighbours.length ) {
+                            if ( verifiedNeighbours.every( function ( el, ix ) {
+                                    return el.id == testNeighbours[ ix ].id;
+                                } ) ) {
+                                correctNbs.c++;
+                            }
                         }
                     }
+                } );
+
+                t.equal( verticesFound.c, verticesFound.total, 'Correct vertices' );
+                t.equal( correctNbs.c, correctNbs.total, 'Vertices with correct neighbours' );
+
+                if ( dtOurs > 50 ) {
+                    t.ok( dtTheirs < 2 * dtOurs, 'Be no more than 2x slower than solution (you: ' + dtTheirs + ' ms, us: ' + dtOurs + ' ms)' );
                 }
+
+                next();
+
             } );
-
-            t.equal( verticesFound.c, verticesFound.total, 'Correct vertices' );
-            t.equal( correctNbs.c, correctNbs.total, 'Vertices with correct neighbours' );
-
-            t.end();
-
         } );
-    } );
+    } catch ( e ) {
+        console.error( e );
+        t.fail( 'Failed reading graph from file.' );
+        next();
+    }
+}
 
+exports.verify = verify( { modeReset: true }, function checker( args, t ) {
+    var reader = require( path.resolve( args[ 0 ] ) ),
+        files = [
+            { dir: 'samples', name: 'sample1.in' },
+            { dir: 'samples', name: 'sample2.in' },
+            { dir: 'tests', name: 'large1.in', desc: 'Large input file' }
+        ];
+
+    var index = 0;
+
+    function next() {
+        if ( index < files.length ) {
+            runAgainstFile( t, reader, path.join( __dirname, files[ index ].dir, files[ index ].name ), files[ index ].desc || files[ index ].name, next )
+        } else {
+            t.end();
+        }
+        index++;
+    }
+
+    next();
 
 } );

@@ -58,7 +58,13 @@ function runAgainstFile( t, theirSolver, inFile, desc, next ) {
                 t.equal( correctNbs.c, correctNbs.total, 'Vertices with correct neighbours' );
 
                 if ( dtOurs > 50 ) {
-                    t.ok( dtTheirs < 2 * dtOurs, 'Be no more than 2x slower than solution (you: ' + dtTheirs + ' ms, us: ' + dtOurs + ' ms)' );
+                    var slower = Math.round( 100 * dtTheirs / dtOurs ) / 100,
+                        time = 'Time taken: you ' + dtTheirs + ' ms, us ' + dtOurs + ' ms';
+                    if ( slower > 4 ) {
+                        t.fail( 'Your solution is ' + slower + 'x slower than ours. ' + time );
+                    } else {
+                        t.pass( 'Be no more than 4x slower than us. ' + time );
+                    }
                 }
 
                 next();
@@ -77,6 +83,7 @@ exports.verify = verify( { modeReset: true }, function checker( args, t ) {
         files = [
             { dir: 'samples', name: 'sample1.in' },
             { dir: 'samples', name: 'sample2.in' },
+            { dir: 'tests', name: 'mid.in', desc: 'Medium input file' },
             { dir: 'tests', name: 'large1.in', desc: 'Large input file' }
         ];
 

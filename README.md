@@ -32,7 +32,7 @@ to solve various types of problems. More exercises will be added. Current progre
     Create a Graph data structure which manages the vertices and edges
     from the previous exercise.
     
-    Reading Problems ————————————·—————————————————·————
+    Reading Problems ————————————·—————————————————·————————————————————O
     Read large graphs from files.
     
     Under Siege —————————————————·

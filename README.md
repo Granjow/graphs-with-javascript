@@ -35,8 +35,19 @@ to solve various types of problems. More exercises will be added. Current progre
     Reading Problems ————————————·—————————————————·————————————————————O
     Read large graphs from files.
     
-    Under Siege —————————————————·
-    Help the city ABC, which is under siege, to defend itself with your
-    new knowledge!
-    
-    
+    Under Siege —————————————————·————————————
+    Help the city Bohandur, which is under siege, to defend itself 
+    with your new knowledge!
+
+
+## Feedback
+
+I’m very interested in reading your feedback to the exercises, like:
+
+* Did you miss some information which would have been required for solving the exercise?
+* Was an exercise too hard?
+* Did the verification fail, or was the master solution wrong?
+* Did you like it?
+
+Please feel free to open a thread (issue) in the [GitHub Issue Tracker](https://github.com/Granjow/graphs-with-javascript/issues)
+and drop some lines of text or code, so this tutorial can be further improved. Thank you!

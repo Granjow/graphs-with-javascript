@@ -21,5 +21,8 @@ shop.add( 'Graph Structure', function () {
 shop.add( 'Reading Problems', function () {
     return require( './exercises/ex3-reading-problems/reading-problems' );
 } );
+shop.add( 'Under Siege', function () {
+    return require( './exercises/ex4-siege/siege' );
+} );
 
 shop.execute( process.argv.slice( 2 ) );

@@ -37,7 +37,7 @@ to solve various types of problems. More exercises will be added. Current progre
     Reading Problems ————————————·—————————————————·————————————————————O
     Read large graphs from files.
     
-    Under Siege —————————————————·————————————
+    Under Siege —————————————————·——————————————
     Help the city Bohandur, which is under siege, to defend itself 
     with your new knowledge!
 

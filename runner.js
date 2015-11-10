@@ -24,5 +24,8 @@ shop.add( 'Reading Problems', function () {
 //shop.add( 'Under Siege', function () {
 //    return require( './exercises/ex4-siege/siege' );
 //} );
+shop.add( 'Improve it!', function () {
+    return require( './exercises/feedback/feedback' );
+} );
 
 shop.execute( process.argv.slice( 2 ) );
